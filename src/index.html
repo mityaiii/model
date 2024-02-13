@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./output.css" rel="stylesheet">
+    <script src='https://cdn.plot.ly/plotly-2.27.0.min.js'></script>
+    <title>Document</title>
+</head>
+<body class="h-screen">
+    <main class="m-auto block w-max">
+        <h3 class="text-xl pb-5">Параметры процесса</h3>
+        <ul class="gap-y-5 flex flex-col">
+            <li>
+                <div class="flex justify-between w-64">
+                    <p>m * 9.1 * 10^(-31)кг</p>
+                    <input 
+                        id="m-input"
+                        onchange=calculate()
+                        type="number"
+                        value="1"
+                        min="0"
+                        step="0.1"
+                        class="w-24 rounded-md  border-2 border-blue-500 px-3"
+                    />
+                </div>
+            </li>
+
+            <li>
+                <div class="flex justify-between w-64">
+                    <p>q * 10^(-19) Кл</p>
+                    <input 
+                        id="q-input"
+                        onchange=calculate()
+                        type="number"
+                        value="1"
+                        min="0"
+                        step="0.1"
+                        class="w-24 rounded-md  border-2 border-blue-500 px-3"
+                    />
+                </div>
+            </li>
+
+            <li>
+                <div class="flex justify-between w-64">
+                    <p>B (Тл)</p>
+                    <input 
+                        id="b-input"
+                        onchange=calculate()
+                        type="number"
+                        value="0.1"
+                        min="0"
+                        step="0.1"
+                        class="w-24 rounded-md  border-2 border-blue-500 px-3"
+                    />
+                </div>
+            </li>
+
+            <li>
+                <div class="flex justify-between w-64">
+                    <p>V (м/с)</p>
+                    <input
+                        id="v-input" 
+                        onchange=calculate()
+                        type="number"
+                        min="0"
+                        value="1"
+                        step="0.1"
+                        class="w-24 rounded-md   border-2 border-blue-500  px-3"
+                    />
+                </div>
+            </li>
+
+            <li>
+                <div class="flex justify-between w-64">
+                    <p>alpha (градусов)</p>
+                    <input 
+                        id="alpha-input"
+                        onchange=calculate()
+                        type="number"
+                        min="0"
+                        value="60"
+                        step="0.1"
+                        class="w-24 rounded-md   border-2 border-blue-500  px-3"
+                    />
+                </div>
+            </li>
+        </ul>
+    </main>
+    <div id='myDiv'><!-- Plotly chart will be drawn inside this DIV --></div>
+
+    <script src="./index.js"></script>
+</body>
+</html>
